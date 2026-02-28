@@ -1,7 +1,6 @@
 version: "0.1"
 user: rahulblambdatest
 key: '********'
-matrix: {os: [linux]}
 testSuites: []
 pre: [pip3 install --user -r requirements.txt]
 preDirectives:
@@ -15,14 +14,29 @@ postDirectives:
     shell: ""
     workingDirectory: ""
 jobLabel:
-    - TestMu-Certification-Final
+    - selenium
+    - python
+    - hyperexecute-assignment
 runson: linux
-testRunnerCommand: python3 lambdatest.py
+autosplit: true
+concurrency: 1
+testDiscovery:
+    command: echo lambdatest.py
+    mode: static
+    type: raw
+testDiscoveryResult:
+    - lambdatest.py
+testDiscoveryResult2D:
+    - - lambdatest.py
+testRunnerCommand: python3 $test
+globalTimeout: 150
 tunnelOpts:
     testsPerTunnel: 10
+testSuiteTimeout: 150
+testSuiteStep: 150
 retryOnFailure: true
 maxRetries: 3
-jobID: 3ff319e8-92c4-48a4-875c-8d90fa6be0ae
+jobID: 5b323079-4154-40d1-962f-671d09bf76da
 codeDirectory: python-selenium-sample-hyp
 framework:
     name: ""
