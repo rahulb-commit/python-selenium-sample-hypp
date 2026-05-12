@@ -12,8 +12,8 @@ retryOnFailure: true
 maxRetries: 3
 
 env:
-  LT_USERNAME: ${{.secrets.token}}
-  LT_ACCESS_KEY: ${{.secrets.token}}
+  LT_USERNAME: ${{.secrets.LT_USERNAME}}
+  LT_ACCESS_KEY: ${{.secrets.LT_ACCESS_KEY}}
 
 project:
   name: "testfor aca"
