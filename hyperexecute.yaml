@@ -10,15 +10,14 @@ concurrency: 1
 
 retryOnFailure: true
 maxRetries: 3
+
 env:
   LT_USERNAME: ${{.secrets.token}}
-   LT_ACCESS_KEY: ${{.secrets.token}}
+  LT_ACCESS_KEY: ${{.secrets.token}}
 
 project:
-  name: 'testfor aca' 
-  id: '01KRE762KVD6X1FQ4ES05CQ5J7' 
-  
-  
+  name: "testfor aca"
+  id: "01KRE762KVD6X1FQ4ES05CQ5J7"
 
 pre:
   - pip3 install --user -r requirements.txt
@@ -33,4 +32,7 @@ testDiscovery:
   mode: static
   command: echo lambdatest.py
 
-jobLabel: ["selenium", "python", "hyperexecute-assignment"]
+jobLabel:
+  - selenium
+  - python
+  - hyperexecute-assignment
