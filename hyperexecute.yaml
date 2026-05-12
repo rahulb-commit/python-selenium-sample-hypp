@@ -29,7 +29,7 @@ post:
 
 testDiscovery:
   type: raw
-  mode: static
+  mode: dynamic
   command: echo lambdatest.py
 
 jobLabel:
